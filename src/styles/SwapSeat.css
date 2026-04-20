@@ -1,0 +1,317 @@
+/* =========================
+   2026-27 IRCTC STYLE SWAP PAGE
+========================= */
+
+.swap-page {
+  --primary: #0b3d91;
+  --primary-dark: #072b66;
+  --accent: #f97316;
+  --accent-dark: #ea580c;
+  --text-main: #1e293b;
+  --text-soft: #64748b;
+  --border: rgba(148, 163, 184, 0.22);
+  --glass: rgba(255, 255, 255, 0.85);
+  --shadow-lg: 0 24px 55px rgba(15, 23, 42, 0.10);
+  --shadow-md: 0 14px 30px rgba(15, 23, 42, 0.08);
+
+  min-height: 100vh;
+  padding: 42px 18px 60px;
+  background:
+    radial-gradient(circle at top left, rgba(11, 61, 145, 0.10), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.08), transparent 24%),
+    linear-gradient(180deg, #f4f8fd 0%, #edf3fb 50%, #e9f0f8 100%);
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================
+   MAIN CONTAINERS
+========================= */
+.swap-container,
+.swap-options-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: var(--glass);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+}
+
+.swap-container::before,
+.swap-options-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.06), transparent 22%);
+}
+
+.swap-container::after,
+.swap-options-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary), #2563eb, var(--accent));
+}
+
+/* =========================
+   HEADINGS
+========================= */
+.swap-container h2,
+.swap-options-container h2 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 12px;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.subtitle {
+  margin-bottom: 22px;
+  color: var(--text-soft);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   FORM
+========================= */
+.swap-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.swap-form input {
+  height: 56px;
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
+  border-radius: 16px;
+  padding: 0 16px;
+  font-size: 15px;
+  background: #ffffff;
+  transition: all 0.28s ease;
+}
+
+.swap-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.swap-btn,
+.select-passenger-btn,
+.select-seat-btn,
+.back-btn,
+.swap-form button {
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.28s ease;
+  box-shadow: 0 12px 24px rgba(11, 61, 145, 0.22);
+}
+
+.swap-form button {
+  height: 56px;
+  padding: 0 22px;
+}
+
+.swap-btn,
+.select-passenger-btn,
+.select-seat-btn,
+.back-btn {
+  padding: 12px 20px;
+}
+
+.swap-btn:hover,
+.select-passenger-btn:hover,
+.select-seat-btn:hover,
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(11, 61, 145, 0.28);
+}
+
+/* back button special */
+.back-btn {
+  background: #edf3fc;
+  color: #1f4f96;
+  box-shadow: none;
+  border: 1px solid #d7e2f1;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+.message {
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-weight: 600;
+  background: #eef5ff;
+  color: #1d5fbf;
+  border: 1px solid #cfe0ff;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   CARDS (Passenger / Seat)
+========================= */
+.passenger-card,
+.seat-option-card {
+  background: #ffffff;
+  border: 1px solid rgba(203, 213, 225, 0.6);
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.25s ease;
+}
+
+.seat-option-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   SEAT GRID
+========================= */
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.seat-tile {
+  border-radius: 18px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #d5e0ef;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.seat-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 61, 132, 0.08);
+}
+
+.seat-number {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.seat-meta {
+  font-size: 12px;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+/* STATES */
+.available-seat {
+  background: #eef9f0;
+}
+
+.booked-seat {
+  background: #ffe8e8;
+}
+
+.current-seat {
+  background: #e8f1ff;
+}
+
+.selected-seat {
+  background: linear-gradient(135deg, var(--primary), #2563eb);
+  color: #fff;
+}
+
+/* =========================
+   PRICING CARD
+========================= */
+.swap-pricing-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+  border: 1px solid #d8e4f5;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.swap-pricing-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-weight: 600;
+  color: #35507a;
+}
+
+.swap-pricing-total span:last-child {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+/* =========================
+   SUCCESS BOX
+========================= */
+.success-box {
+  border-left: 6px solid #1db954;
+  background: linear-gradient(180deg, #f4fff7, #ecfff1);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .swap-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .swap-page {
+    padding: 24px 12px;
+  }
+
+  .swap-container,
+  .swap-options-container {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .seat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .swap-btn,
+  .select-seat-btn,
+  .select-passenger-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .seat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seat-number {
+    font-size: 22px;
+  }
+
+  .seat-meta {
+    font-size: 11px;
+  }
+}

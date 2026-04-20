@@ -1,10 +1,11 @@
+# ================= BACKEND (Spring Boot) =================
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+# STS
 .apt_generated
 .classpath
 .factorypath
@@ -13,13 +14,13 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
+# IntelliJ
 .idea
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
@@ -27,9 +28,22 @@ target/
 /.gradle/
 build/
 
-### VS Code ###
-.vscode/
+# ================= FRONTEND (React/Vite) =================
+node_modules
+dist
+dist-ssr
+*.local
 
-### OS ###
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ================= COMMON =================
+.vscode/*
+!.vscode/extensions.json
 .DS_Store
 Thumbs.db

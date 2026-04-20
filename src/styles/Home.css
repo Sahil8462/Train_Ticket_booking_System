@@ -1,0 +1,318 @@
+.home-container {
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 42px 42px 64px;
+  position: relative;
+}
+
+/* 🔥 Overlay (premium glass look) */
+.home-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 47, 93, 0.72),
+    rgba(41, 90, 167, 0.35),
+    rgba(255, 255, 255, 0.04)
+  );
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+.home-overlay {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 1;
+  padding-top: 48px; /* top tabs ke liye space */
+}
+
+/* main booking box */
+.booking-container {
+  position: relative;
+  z-index: 2;
+  margin-top: 40px; /* tabs ke niche start hoga */
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* top mini menu / tabs */
+.top-shortcuts,
+.home-top-links,
+.home-top-menu {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  font-size: 15px;
+  pointer-events: auto;
+}
+
+/* individual tab */
+.top-shortcuts span,
+.home-top-links span,
+.home-top-menu span {
+  position: relative;
+  z-index: 6;
+}
+
+.booking-wrapper {
+  width: 100%;
+  max-width: 940px;
+  margin-top: 34px;
+}
+
+/* =========================
+   TABS
+========================= */
+.tabs {
+  display: flex;
+  width: 100%;
+  max-width: 880px;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.tab-btn {
+  flex: 1;
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  color: #ffffff;
+  border: none;
+  padding: 18px 20px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  position: relative;
+}
+
+.tab-btn:last-child {
+  border-right: none;
+}
+
+.tab-btn::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.9);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.tab-btn:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+.tab-btn:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================
+   CARD
+========================= */
+.booking-card {
+  width: 100%;
+  max-width: 880px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  border-radius: 0 0 22px 22px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 36px 36px 38px;
+  position: relative;
+}
+
+.booking-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--primary-soft),
+    var(--secondary)
+  );
+}
+
+.booking-card h2 {
+  text-align: center;
+  color: var(--primary);
+  font-size: 44px;
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+
+/* =========================
+   FORM
+========================= */
+.row {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.field-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-box label {
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.field-box input,
+.field-box select {
+  width: 100%;
+  height: 56px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0 14px;
+  font-size: 15px;
+  color: var(--text-main);
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  transition: var(--transition-normal);
+}
+
+.field-box input::placeholder {
+  color: var(--text-muted);
+}
+
+.field-box input:hover,
+.field-box select:hover {
+  border-color: #b8c8e4;
+}
+
+.field-box input:focus,
+.field-box select:focus {
+  border-color: var(--primary-soft);
+  box-shadow: 0 0 0 3px rgba(41, 90, 167, 0.1);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin: 14px 0 24px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  background: rgba(23, 63, 122, 0.05);
+  border: 1px solid rgba(23, 63, 122, 0.08);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  transition: var(--transition-fast);
+}
+
+.checkbox-group label:hover {
+  background: rgba(23, 63, 122, 0.08);
+  transform: translateY(-1px);
+}
+
+.checkbox-group input {
+  accent-color: var(--primary-soft);
+}
+
+/* =========================
+   MESSAGE
+========================= */
+.home-message {
+  color: var(--danger);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.search-btn {
+  display: block;
+  margin: 0 auto;
+  min-width: 260px;
+  background: linear-gradient(135deg, var(--secondary), #ff9a42);
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 800;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  box-shadow: 0 12px 24px rgba(245, 124, 32, 0.25);
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(245, 124, 32, 0.32);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 18px 12px 36px;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .booking-card {
+    padding: 24px 18px;
+  }
+
+  .booking-card h2 {
+    font-size: 28px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+}

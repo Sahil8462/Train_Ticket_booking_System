@@ -1,0 +1,168 @@
+/* =========================
+   PAGE BASE
+========================= */
+.alerts-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef3fb 100%);
+  padding-bottom: 30px;
+}
+
+/* =========================
+   TABS HEADER (MODERN)
+========================= */
+.alerts-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid #e3eaf3;
+  box-shadow: 0 4px 14px rgba(15, 35, 75, 0.06);
+
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+/* =========================
+   TAB BUTTONS
+========================= */
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 12px 22px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #6b7a90;
+
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.tab-btn:hover {
+  color: #1e4f8f;
+  background: rgba(30, 136, 216, 0.08);
+}
+
+/* Active */
+.active-tab {
+  background: #1e88d8;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(30, 136, 216, 0.22);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.alerts-content {
+  width: 100%;
+  padding: 18px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* =========================
+   ALERT CARD (MODERN CARD UI)
+========================= */
+.alert-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e6edf5;
+
+  border-radius: 12px;
+  padding: 16px 16px;
+
+  box-shadow: 0 6px 18px rgba(15, 35, 75, 0.05);
+
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.alert-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(15, 35, 75, 0.09);
+  border-color: #d6e3f2;
+}
+
+/* =========================
+   BULLET ICON
+========================= */
+.bullet {
+  min-width: 22px;
+  font-size: 16px;
+  color: #1e88d8;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* =========================
+   TEXT
+========================= */
+.alert-row p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #2c3e55;
+}
+
+/* =========================
+   COLOR STATES
+========================= */
+.red {
+  color: #d93025;
+  font-weight: 600;
+}
+
+.blue {
+  color: #1565c0;
+  font-weight: 600;
+}
+
+.black {
+  color: #1f2937;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .alerts-tabs {
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .tab-btn {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .alerts-content {
+    padding: 12px 8px;
+  }
+
+  .alert-row {
+    padding: 14px 12px;
+    border-radius: 10px;
+  }
+
+  .alert-row p {
+    font-size: 13px;
+  }
+
+  .bullet {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,363 @@
+/* =========================
+   2026-27 IRCTC STYLE NAVBAR
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0b3d91;
+  --primary-dark: #072b66;
+  --primary-soft: #2563eb;
+  --accent: #f97316;
+  --accent-dark: #ea580c;
+  --text-main: #1e293b;
+  --text-soft: #64748b;
+  --border: rgba(148, 163, 184, 0.22);
+  --glass: rgba(255, 255, 255, 0.84);
+  --glass-strong: rgba(255, 255, 255, 0.94);
+  --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.10);
+  --shadow-md: 0 12px 26px rgba(15, 23, 42, 0.08);
+  --shadow-sm: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* =========================
+   NAVBAR WRAPPER
+========================= */
+.navbar-wrapper {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(203, 213, 225, 0.65);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.navbar-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-soft), var(--accent));
+  z-index: 1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  gap: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   LEFT (LOGO)
+========================= */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  transition: all 0.25s ease;
+}
+
+.logo:hover {
+  color: var(--primary-dark);
+}
+
+.logo-img {
+  height: 62px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.28s ease, filter 0.28s ease;
+  filter: drop-shadow(0 8px 18px rgba(11, 61, 145, 0.10));
+}
+
+.logo-img:hover {
+  transform: scale(1.04);
+  filter: drop-shadow(0 12px 24px rgba(11, 61, 145, 0.16));
+}
+
+/* =========================
+   MENU
+========================= */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 22px;
+  position: relative;
+  flex-wrap: nowrap;
+}
+
+/* =========================
+   NAV ITEM
+========================= */
+.nav-item {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 14.5px;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  padding: 10px 0;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-soft));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+  border-radius: 999px;
+}
+
+.nav-item:hover {
+  color: var(--primary);
+}
+
+.nav-item:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================
+   ACTIVE LINK
+========================= */
+.nav-item.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.nav-item.active::after {
+  transform: scaleX(1);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.login-btn,
+.signup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  height: 44px;
+  padding: 0 18px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-soft));
+  color: #ffffff !important;
+  border-radius: 14px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(11, 61, 145, 0.18);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  border: none;
+}
+
+.login-btn::after,
+.signup-btn::after {
+  display: none;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(11, 61, 145, 0.24);
+  color: #ffffff !important;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.dropdown-parent {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 270px;
+  background: var(--glass-strong);
+  border: 1px solid rgba(203, 213, 225, 0.7);
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.small-dropdown {
+  width: 230px;
+}
+
+/* =========================
+   DROPDOWN ITEMS
+========================= */
+.dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 13px 15px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  transition: all 0.25s ease;
+  background: transparent;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background: linear-gradient(90deg, rgba(11, 61, 145, 0.08), rgba(37, 99, 235, 0.03));
+  color: var(--primary);
+  padding-left: 19px;
+}
+
+/* =========================
+   USER / LOGOUT
+========================= */
+.user-text {
+  margin-right: 6px;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  height: 44px;
+  padding: 0 16px;
+  background: linear-gradient(135deg, #dc2626, #c9302c);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  box-shadow: 0 10px 20px rgba(201, 48, 44, 0.16);
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(201, 48, 44, 0.24);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1100px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .navbar-menu {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 14px;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-item {
+    width: 100%;
+    padding: 9px 0;
+  }
+
+  .dropdown-parent {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    margin-top: 6px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .login-btn,
+  .signup-btn,
+  .logout-btn {
+    width: 100%;
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .logo-img {
+    height: 42px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .user-text {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,280 @@
+/* =========================
+   ROOT VARIABLES (THEME)
+========================= */
+:root {
+  --primary: #173f7a;
+  --primary-dark: #0f2f5d;
+  --primary-soft: #295aa7;
+
+  --secondary: #f57c20;
+  --secondary-dark: #dc6c15;
+
+  --bg-light: #f4f7fb;
+  --bg-soft: #eef3fb;
+  --bg-white: rgba(255, 255, 255, 0.94);
+
+  --text-dark: #1e293b;
+  --text-light: #5b6b82;
+  --text-muted: #7b8ba3;
+
+  --border: #d9e2ef;
+  --border-soft: rgba(23, 63, 122, 0.08);
+
+  --shadow-sm: 0 6px 14px rgba(15, 47, 93, 0.08);
+  --shadow-md: 0 12px 28px rgba(15, 47, 93, 0.12);
+  --shadow-lg: 0 20px 44px rgba(15, 47, 93, 0.16);
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
+
+  --transition: all 0.28s ease;
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", "Poppins", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(41, 90, 167, 0.06), transparent 28%),
+    linear-gradient(180deg, #f8fbff 0%, var(--bg-light) 100%);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================
+   ROOT DIV
+========================= */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--primary);
+}
+
+p {
+  margin: 0;
+  color: var(--text-light);
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition), opacity var(--transition);
+}
+
+a:hover {
+  opacity: 0.95;
+}
+
+/* =========================
+   BUTTON (PREMIUM STYLE)
+========================= */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  color: #fff;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(23, 63, 122, 0.2);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================
+   INPUT / SELECT / TEXTAREA
+========================= */
+input,
+select,
+textarea {
+  outline: none;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  transition: var(--transition);
+  background: #fff;
+  color: var(--text-dark);
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-soft);
+  box-shadow: 0 0 0 3px rgba(41, 90, 167, 0.1);
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+.page {
+  padding: 25px;
+}
+
+/* =========================
+   CARD (MODERN GLASS LOOK)
+========================= */
+.card {
+  background: var(--bg-white);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-soft);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* =========================
+   FLEX UTILITIES
+========================= */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================
+   GRID UTIL
+========================= */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* =========================
+   WIDTH UTILITY
+========================= */
+.w-full {
+  width: 100%;
+}
+
+/* =========================
+   TEXT UTILITIES
+========================= */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* =========================
+   SPACING UTILITIES
+========================= */
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mt-40 { margin-top: 40px; }
+
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mb-40 { margin-bottom: 40px; }
+
+/* =========================
+   CONTAINER (CENTERED)
+========================= */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   SCROLLBAR (MODERN)
+========================= */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf2f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c1c9d6, #9aa7b8);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7d8ca3;
+}

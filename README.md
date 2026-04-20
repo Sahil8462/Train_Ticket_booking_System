@@ -1,2 +1,25 @@
-# Train_Ticket_booking_System
-A full-stack Train Ticket Booking System inspired by IRCTC, built using React.js and modern web technologies. The system allows users to search trains, check availability, book tickets, manage passengers, and simulate real-time booking flow with features like seat selection, crowd prediction, and secure payment integration.
+# Train Ticket Booking System
+
+A full-stack Train Ticket Booking System inspired by IRCTC.
+
+## 🚀 Features
+- Search trains
+- Check seat availability
+- Book tickets
+- Manage passengers
+- Seat selection
+- Crowd prediction
+- Secure payment integration
+
+## 🖥️ Tech Stack
+- Frontend: React.js (Vite)
+- Backend: Spring Boot
+- Database: MySQL
+
+## 📦 Frontend Setup (Vite)
+This project uses Vite for fast development and HMR.
+
+### Run frontend
+```bash
+npm install
+npm run dev

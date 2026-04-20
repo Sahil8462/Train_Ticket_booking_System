@@ -1,0 +1,229 @@
+/* =========================
+   LOGIN PAGE
+========================= */
+.login-container {
+  min-height: 100vh;
+  background: 
+    radial-gradient(circle at top left, rgba(41, 90, 167, 0.25), transparent 35%),
+    linear-gradient(135deg, #0f2f5d, #173f7a, #2d6ec4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* floating glass circles */
+.login-container::before,
+.login-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(12px);
+}
+
+.login-container::before {
+  width: 420px;
+  height: 420px;
+  background: rgba(255, 255, 255, 0.08);
+  top: -120px;
+  left: -100px;
+}
+
+.login-container::after {
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.06);
+  bottom: -100px;
+  right: -70px;
+}
+
+/* =========================
+   CARD
+========================= */
+.login-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  padding: 34px 28px;
+  border-radius: var(--radius-lg);
+  width: 380px;
+  max-width: 100%;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.login-card h2 {
+  margin-bottom: 22px;
+  color: var(--primary);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+/* =========================
+   INPUTS
+========================= */
+.login-card input {
+  width: 100%;
+  padding: 14px 14px;
+  margin-bottom: 15px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--text-main);
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+  transition: var(--transition-normal);
+}
+
+.login-card input::placeholder {
+  color: var(--text-muted);
+}
+
+.login-card input:focus {
+  border-color: var(--primary-soft);
+  box-shadow: 0 0 0 4px rgba(41, 90, 167, 0.1);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   PASSWORD BOX
+========================= */
+.password-box {
+  position: relative;
+}
+
+.password-box span {
+  position: absolute;
+  right: 14px;
+  top: 13px;
+  cursor: pointer;
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.password-box span:hover {
+  color: var(--primary);
+}
+
+/* =========================
+   FORGOT TEXT
+========================= */
+.forgot {
+  font-size: 13px;
+  color: var(--primary);
+  margin-bottom: 12px;
+  cursor: pointer;
+  text-align: right;
+  font-weight: 600;
+}
+
+.forgot:hover {
+  color: var(--primary-dark);
+}
+
+/* =========================
+   OTP OPTION
+========================= */
+.otp-option {
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 16px;
+  color: var(--text-soft);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.signin-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 15px;
+  margin-bottom: 12px;
+  transition: var(--transition-normal);
+  box-shadow: 0 12px 22px rgba(23, 63, 122, 0.22);
+}
+
+.signin-btn:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  transform: translateY(-2px);
+}
+
+/* =========================
+   MESSAGE
+========================= */
+.login-message {
+  font-size: 13px;
+  color: var(--danger);
+  margin-bottom: 12px;
+  background: rgba(217, 48, 37, 0.08);
+  border: 1px solid rgba(217, 48, 37, 0.12);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+
+/* =========================
+   BOTTOM BUTTONS
+========================= */
+.bottom-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Register */
+.register {
+  flex: 1;
+  background: linear-gradient(135deg, var(--secondary), #ff9a42);
+  color: white;
+  padding: 11px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  transition: var(--transition-normal);
+  box-shadow: 0 10px 18px rgba(239, 111, 15, 0.2);
+}
+
+.register:hover {
+  transform: translateY(-2px);
+}
+
+/* Agent */
+.agent {
+  flex: 1;
+  background: linear-gradient(135deg, #4c5665, #2e3742);
+  color: white;
+  padding: 11px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  transition: var(--transition-normal);
+  box-shadow: 0 10px 18px rgba(34, 34, 34, 0.18);
+}
+
+.agent:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 26px 18px;
+  }
+
+  .login-card h2 {
+    font-size: 24px;
+  }
+
+  .bottom-btns {
+    flex-direction: column;
+  }
+}

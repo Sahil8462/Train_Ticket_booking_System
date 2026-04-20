@@ -1,0 +1,465 @@
+/* =========================
+   2026-27 IRCTC STYLE PASSENGER PAGE
+========================= */
+
+.passenger-page {
+  --primary: #0b3d91;
+  --primary-dark: #072b66;
+  --primary-light: #eaf2ff;
+  --accent: #f97316;
+  --accent-dark: #ea580c;
+  --accent-soft: #fff2e8;
+  --text-main: #1e293b;
+  --text-soft: #64748b;
+  --border: rgba(148, 163, 184, 0.22);
+  --glass: rgba(255, 255, 255, 0.84);
+  --shadow-lg: 0 24px 55px rgba(15, 23, 42, 0.10);
+  --shadow-md: 0 14px 30px rgba(15, 23, 42, 0.08);
+  --shadow-sm: 0 8px 18px rgba(15, 23, 42, 0.05);
+
+  min-height: 100vh;
+  padding: 38px 20px;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(11, 61, 145, 0.10), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.08), transparent 24%),
+    linear-gradient(180deg, #f4f8fd 0%, #edf3fb 48%, #e9f0f8 100%);
+  box-sizing: border-box;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.passenger-container {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-lg);
+  padding: 32px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+}
+
+.passenger-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.06), transparent 22%);
+  pointer-events: none;
+}
+
+.passenger-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary), #2563eb, var(--accent));
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+.passenger-container h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 20px;
+  color: var(--primary-dark);
+  font-size: 31px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+}
+
+/* =========================
+   MESSAGE / ALERT
+========================= */
+.passenger-message {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 18px;
+  padding: 13px 15px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #c62828;
+  background: rgba(217, 48, 37, 0.08);
+  border: 1px solid rgba(217, 48, 37, 0.15);
+  box-shadow: 0 6px 14px rgba(217, 48, 37, 0.06);
+}
+
+/* =========================
+   JOURNEY SUMMARY BOX
+========================= */
+.journey-summary-box {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(239, 246, 255, 0.92));
+  border: 1px solid rgba(191, 219, 254, 0.65);
+  border-radius: 22px;
+  padding: 22px;
+  margin-bottom: 26px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.journey-summary-box::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), #2563eb, var(--accent));
+}
+
+.journey-summary-box h3 {
+  margin: 0 0 14px;
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.journey-summary-box p {
+  margin: 8px 0;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* =========================
+   FORM LAYOUT
+========================= */
+.passenger-form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.passenger-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.passenger-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.passenger-full-width {
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   LABELS
+========================= */
+.passenger-field label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+
+/* =========================
+   INPUTS / SELECT / TEXTAREA
+========================= */
+.passenger-field input,
+.passenger-field select,
+.passenger-field textarea {
+  width: 100%;
+  min-height: 56px;
+  border: 1.5px solid rgba(203, 213, 225, 0.95);
+  border-radius: 16px;
+  padding: 0 16px;
+  font-size: 15px;
+  color: var(--text-main);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.96));
+  outline: none;
+  transition: all 0.28s ease;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.03);
+  font-family: inherit;
+}
+
+.passenger-field textarea {
+  min-height: 118px;
+  padding: 14px 16px;
+  resize: vertical;
+}
+
+.passenger-field input::placeholder,
+.passenger-field textarea::placeholder {
+  color: #94a3b8;
+}
+
+.passenger-field input:hover,
+.passenger-field select:hover,
+.passenger-field textarea:hover {
+  border-color: rgba(96, 165, 250, 0.58);
+  background: #ffffff;
+}
+
+.passenger-field input:focus,
+.passenger-field select:focus,
+.passenger-field textarea:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.11);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   EXTRA NOTE
+========================= */
+.passenger-note {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+/* =========================
+   ACTION BAR
+========================= */
+.passenger-action-bar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(226, 232, 240, 0.95);
+}
+
+/* =========================
+   TOTAL BOX
+========================= */
+.passenger-total {
+  color: var(--primary-dark);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(203, 213, 225, 0.55);
+  border-radius: 18px;
+  padding: 14px 18px;
+  box-shadow: var(--shadow-sm);
+  min-width: 190px;
+}
+
+.passenger-total h4 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.passenger-total p {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.3px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.passenger-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 230px;
+  height: 54px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #ffffff;
+  border: none;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.28s ease;
+  box-shadow: 0 14px 28px rgba(234, 88, 12, 0.24);
+}
+
+.passenger-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(234, 88, 12, 0.30);
+}
+
+.passenger-btn:active {
+  transform: translateY(0);
+}
+
+.passenger-btn:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================
+   OPTIONAL SCROLLBAR
+========================= */
+.passenger-container::-webkit-scrollbar,
+.passenger-field textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.passenger-container::-webkit-scrollbar-thumb,
+.passenger-field textarea::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 20px;
+}
+
+.passenger-container::-webkit-scrollbar-track,
+.passenger-field textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 992px) {
+  .passenger-page {
+    padding: 28px 16px;
+  }
+
+  .passenger-container {
+    max-width: 100%;
+    padding: 26px 22px;
+    border-radius: 24px;
+  }
+
+  .passenger-container h2 {
+    font-size: 28px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .passenger-page {
+    padding: 20px 12px 26px;
+  }
+
+  .passenger-container {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .passenger-container h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .journey-summary-box {
+    padding: 16px 14px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+  }
+
+  .journey-summary-box h3 {
+    font-size: 19px;
+  }
+
+  .journey-summary-box p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .passenger-form {
+    gap: 15px;
+  }
+
+  .passenger-form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .passenger-field input,
+  .passenger-field select,
+  .passenger-field textarea {
+    min-height: 52px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+
+  .passenger-field textarea {
+    min-height: 104px;
+  }
+
+  .passenger-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .passenger-total {
+    width: 100%;
+    min-width: 100%;
+    border-radius: 16px;
+  }
+
+  .passenger-total p {
+    font-size: 23px;
+  }
+
+  .passenger-btn {
+    width: 100%;
+    min-width: 100%;
+    border-radius: 14px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+@media (max-width: 480px) {
+  .passenger-page {
+    padding: 14px 8px 22px;
+  }
+
+  .passenger-container {
+    padding: 16px 12px;
+  }
+
+  .passenger-container h2 {
+    font-size: 21px;
+  }
+
+  .journey-summary-box h3 {
+    font-size: 17px;
+  }
+
+  .journey-summary-box p {
+    font-size: 13px;
+  }
+
+  .passenger-field label {
+    font-size: 13px;
+  }
+
+  .passenger-note {
+    font-size: 12px;
+  }
+
+  .passenger-btn {
+    height: 50px;
+    font-size: 14px;
+  }
+}

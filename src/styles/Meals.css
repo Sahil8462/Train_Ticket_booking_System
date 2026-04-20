@@ -1,0 +1,224 @@
+/* =========================
+   PAGE
+========================= */
+.meals-page {
+  min-height: 100vh;
+  background: transparent;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* =========================
+   LEFT BOX
+========================= */
+.meals-box {
+  width: 240px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+}
+
+/* =========================
+   TOP HEADER
+========================= */
+.meals-offer {
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 14px 16px;
+  text-align: center;
+  position: relative;
+}
+
+.meals-offer::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+}
+
+/* =========================
+   LIST
+========================= */
+.meals-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   ITEM
+========================= */
+.meals-item {
+  padding: 13px 16px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 500;
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  border-top: 1px solid var(--border);
+  transition: var(--transition);
+  position: relative;
+  cursor: pointer;
+}
+
+.meals-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 4px;
+  background: transparent;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.meals-item:hover {
+  background: rgba(23, 63, 122, 0.05);
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+.meals-item:hover::before {
+  background: var(--primary-soft);
+}
+
+.meals-item.active {
+  background: rgba(23, 63, 122, 0.08);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.meals-item.active::before {
+  background: var(--primary);
+}
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+.meals-content {
+  flex: 1;
+  min-height: 520px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.meals-content h2 {
+  font-size: 26px;
+  color: var(--primary);
+  margin-bottom: 6px;
+  font-weight: 800;
+}
+
+.meals-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+/* =========================
+   FOOD GRID
+========================= */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* =========================
+   CARD
+========================= */
+.food-card {
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  border: 1px solid var(--border);
+  padding: 18px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.food-card h3 {
+  font-size: 17px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.food-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  line-height: 1.5;
+  min-height: 40px;
+}
+
+.food-price {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-soft);
+  margin-bottom: 12px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.food-card button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, var(--secondary), #ff9a42);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.food-card button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 14px rgba(245, 124, 32, 0.25);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .meals-page {
+    flex-direction: column;
+    padding: 16px 10px;
+  }
+
+  .meals-box {
+    width: 100%;
+  }
+
+  .meals-content {
+    width: 100%;
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+}

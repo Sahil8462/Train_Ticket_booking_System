@@ -1,0 +1,424 @@
+/* =========================
+   ROOT THEME
+========================= */
+:root {
+  --primary: #173f7a;
+  --primary-dark: #0f2f5d;
+  --primary-soft: #295aa7;
+
+  --secondary: #f57c20;
+  --secondary-dark: #dc6c15;
+
+  --success: #138a5b;
+  --warning: #c98a10;
+  --danger: #d93025;
+
+  --bg-main: #f4f7fb;
+  --bg-soft: #eef3fb;
+  --bg-card: rgba(255, 255, 255, 0.94);
+  --bg-glass: rgba(255, 255, 255, 0.82);
+
+  --text-main: #1e293b;
+  --text-soft: #5b6b82;
+  --text-muted: #7b8ba3;
+  --text-light: #ffffff;
+
+  --border-light: #d9e2ef;
+  --border-soft: rgba(23, 63, 122, 0.08);
+
+  --shadow-xs: 0 2px 8px rgba(15, 47, 93, 0.05);
+  --shadow-sm: 0 6px 14px rgba(15, 47, 93, 0.08);
+  --shadow-md: 0 12px 28px rgba(15, 47, 93, 0.12);
+  --shadow-lg: 0 20px 44px rgba(15, 47, 93, 0.16);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.28s ease;
+}
+
+/* =========================
+   RESET
+========================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   HTML / BODY
+========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(41, 90, 167, 0.06), transparent 28%),
+    linear-gradient(180deg, #f8fbff 0%, var(--bg-main) 100%);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================
+   SELECTION
+========================= */
+::selection {
+  background: rgba(41, 90, 167, 0.18);
+  color: var(--primary-dark);
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+a:hover {
+  opacity: 0.95;
+}
+
+/* =========================
+   MEDIA
+========================= */
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   BUTTONS (GLOBAL)
+========================= */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* =========================
+   INPUTS (GLOBAL)
+========================= */
+input,
+select,
+textarea {
+  font-family: inherit;
+  outline: none;
+  border: 1px solid var(--border-light);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-soft);
+  box-shadow: 0 0 0 3px rgba(41, 90, 167, 0.10);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--text-main);
+}
+
+small {
+  color: var(--text-muted);
+}
+
+/* =========================
+   LISTS
+========================= */
+ul,
+ol {
+  padding-left: 20px;
+}
+
+/* =========================
+   COMMON CARD STYLE
+========================= */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* =========================
+   GLASS EFFECT
+========================= */
+.glass {
+  background: var(--bg-glass);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+}
+
+/* =========================
+   UTILITY CLASSES
+========================= */
+
+/* Layout */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+
+/* Width */
+.w-full {
+  width: 100%;
+}
+
+/* Text */
+.text-center {
+  text-align: center;
+}
+
+.text-soft {
+  color: var(--text-soft);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+/* Spacing */
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mt-40 { margin-top: 40px; }
+
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mb-40 { margin-bottom: 40px; }
+
+.p-10 { padding: 10px; }
+.p-20 { padding: 20px; }
+.p-30 { padding: 30px; }
+.p-40 { padding: 40px; }
+
+/* Radius */
+.radius-sm { border-radius: var(--radius-sm); }
+.radius-md { border-radius: var(--radius-md); }
+.radius-lg { border-radius: var(--radius-lg); }
+.radius-xl { border-radius: var(--radius-xl); }
+
+/* Shadow */
+.shadow-xs { box-shadow: var(--shadow-xs); }
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+/* =========================
+   BUTTON THEMES
+========================= */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  color: var(--text-light);
+  padding: 11px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  box-shadow: 0 8px 16px rgba(23, 63, 122, 0.18);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary), #ff9a42);
+  color: var(--text-light);
+  padding: 11px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  box-shadow: 0 8px 16px rgba(245, 124, 32, 0.22);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, var(--secondary-dark), var(--secondary));
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(23, 63, 122, 0.18);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+}
+
+.btn-outline:hover {
+  background: rgba(23, 63, 122, 0.05);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #d9534f, #c9302c);
+  color: #fff;
+  padding: 11px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  box-shadow: 0 8px 16px rgba(201, 48, 44, 0.18);
+}
+
+.btn-danger:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================
+   FORM HELPERS
+========================= */
+.input-clean {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: #ffffff;
+  color: var(--text-main);
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+.page-section {
+  padding: 32px 0;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(23, 63, 122, 0.12),
+    transparent
+  );
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf2f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #b8c7dc, #8fa8cc);
+  border-radius: 20px;
+  border: 2px solid #edf2f8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #8fa8cc, #6f8fbe);
+}
