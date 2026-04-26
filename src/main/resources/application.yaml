@@ -1,9 +1,10 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/train_booking_system
-    username: root
-    password: "@Yushmanraj7272"
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -12,8 +13,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: sahilkum097@gmail.com
-    password: twchxxyclaqccqeg
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -22,14 +23,10 @@ spring:
             enable: true
 
 razorpay:
-   key:
-      id: rzp_test_SdpP4NW3uQydrF
-      secret: 7yE14fgbgrfRr2EwxCmWnc7p
+  key:
+    id: ${RAZORPAY_KEY_ID}
+    secret: ${RAZORPAY_KEY_SECRET}
 
 rapidapi:
-  key: 24515135a1msh2c534530def53a2p183c23jsn050c84f183c7
-  host: irctc-train-api.p.rapidapi.com
-
-
- 
-            
+  key: ${RAPIDAPI_KEY}
+  host: ${RAPIDAPI_HOST}
