@@ -1,15 +1,11 @@
 import axios from "axios";
 
-const currentHost = window.location.hostname;
 const apiBaseURL =
-  currentHost === "localhost" || currentHost === "127.0.0.1"
-    ? "http://localhost:8080/api"
-    : `http://${currentHost}:8080/api`;
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
 
-// Axios instance
 const api = axios.create({
-  baseURL: apiBaseURL,
-   timeout: 10000,
+  baseURL: `${apiBaseURL}/api`,
+  timeout: 10000,
   headers: {
     "Content-Type": "application/json",
   },
